@@ -1,0 +1,142 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0
+}
+
+body {
+  position: relative;
+  font-family: Lato;
+  font-size: 14px;
+  background-color: #e9fbf8;
+  background-image: -webkit-radial-gradient(ellipse farthest-corner at 50% 0, #DBF5F1 0%, #9BE4D8 100%);
+  background-image: radial-gradient(ellipse farthest-corner at 50% 0, #DBF5F1 0%, #9BE4D8 100%);
+}
+
+#phone {
+  position: absolute;
+  min-width: 350px;
+  display: block;
+  width: 350px;
+  height: 760px;
+  background: url("../../assets/iphone.png") no-repeat;
+  background-size: cover;
+  margin: 0 auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.me-container {
+  background-color: #9BE4D8;
+  width: 98%;
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.me-head {
+  height: 44px;
+  line-height: 44px;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  color: #888;
+}
+
+.me-footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px solid #f3f3f3;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.me-body {
+  position: absolute;
+  top: 45px;
+  bottom: 50px;
+  width: 100%;
+
+}
+
+.msg-box {
+  max-width: 100%;
+  height: 30px;
+  line-height: 30px;
+  margin: 15px 0;
+}
+
+.msg {
+  position: relative;
+  margin:0 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  &:before {
+    width: 0;
+    position: absolute;
+    top: 12px;
+    border-style: solid;
+    content: "";
+  }
+}
+
+.msg-left {
+  background-color: #f3f3f3;
+  display: inline-block;
+  float: left;
+  &:before {
+    left: -12px;
+    border-color: transparent #f3f3f3;
+    border-width: 0 12px 12px 0;
+  }
+}
+.msg-right{
+  background-color: #00bfff;
+  display: inline-block;
+  float:right;
+  color: #fff;
+
+  &:before {
+    right: -12px;
+    border-color: transparent #00bfff;
+    border-width: 0 0 12px 12px ;
+  }
+}
+
+@media (max-width: 480px) {
+  #phone {
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+    min-width: 320px;
+  }
+
+  .me-container {
+    background-color: #9BE4D8;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .me-head {
+    //display: none;
+  }
+}
