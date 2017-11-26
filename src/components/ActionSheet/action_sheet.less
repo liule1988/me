@@ -1,0 +1,46 @@
+.action-sheet {
+  position: absolute;
+  visibility: hidden;
+  bottom: 0;
+  transition: all 0.3s;
+  width: 100%;
+  background: #fff;
+  transform:translateY(100%);
+  overflow: hidden;
+  z-index: 100;
+  .head{
+    background-color: #FFF;
+    width: 100%;
+    padding: 15px 15px ;
+    color: #bbb;
+  }
+  .question{
+    padding: 12px 15px;
+    background-color: #fff;
+    border-top: 1px solid #f3f3f3;
+  }
+
+}
+
+.show {
+  bottom: 0;
+  visibility: visible;
+  transform:translateY(0);
+
+}
+.action-mask{
+  opacity: 0;
+  transition: all 0.3s;
+}
+.action-mask-show{
+  opacity: 1;
+
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 99;
+}
+
