@@ -4,7 +4,7 @@
       <div class="me-head">
         与他聊天中...
       </div>
-      <div class="me-body">
+      <div class="me-body" id="chatContent">
         <div class="msg-box" v-for="(item,index) in chat_msgs" key="item">
           <div :class="{'msg':true,'msg-left':item.type=='me','msg-right':item.type=='user'}">{{item.content}}
           </div>
@@ -68,7 +68,12 @@
         this.chat_from_me(chat_data[key])
       },
       chat_push(msg){
+
         this.chat_msgs.push(msg)
+        let chatContent = document.getElementById("chatContent");
+        setTimeout(() => {
+          chatContent.scrollTo(0, chatContent.scrollHeight)
+        },0)
       },
       chat_delay(msg_arr){
         const len = msg_arr.length;
@@ -83,6 +88,7 @@
           setTimeout(() => {
             this.footer_text = DEFAULT_TEXT;
             this.footer_disabled = false;
+
           }, len * 1000)
         } else {
           this.chat_push(msg_arr[0])
