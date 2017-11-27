@@ -6,7 +6,9 @@
       </div>
       <div class="me-body" id="chatContent">
         <div class="msg-box" v-for="(item,index) in chat_msgs" key="item">
-          <div :class="{'msg':true,'msg-left':item.type=='me','msg-right':item.type=='user'}">{{item.content}}
+          <div :class="{'msg':true,'msg-left':item.from=='me','msg-right':item.from=='user'}">
+            <span v-if="!item.type">{{item.content}}</span>
+            <a v-if="item.type=='url'" :href="item.content">损伤</a>
           </div>
         </div>
       </div>
@@ -22,7 +24,7 @@
 
 <script>
   import ActionSheet from '../../components/ActionSheet/action_sheet.vue'
-  const DEFAULT_TEXT = 'hahaha'
+  const DEFAULT_TEXT = '你想了解些什么？'
   import chat_data from '../../../static/chat.json'
   export default {
     name: 'me',
@@ -77,10 +79,10 @@
       },
       chat_delay(msg_arr){
         const len = msg_arr.length;
-        if (msg_arr[0].type == 'me') {
+        if (msg_arr[0].from == 'me') {
           this.footer_disabled = true;
           for (let i = 0; i < len; i++) {
-            this.footer_text = '正在输入...';
+            this.footer_text = 'keepfun正在输入...';
             setTimeout(() => {
               this.chat_push(msg_arr[i]);
             }, (i + 1) * 1000);

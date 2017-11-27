@@ -2,15 +2,15 @@
   "0000": {
     "msg": [
       {
-        "type":"me",
+        "from":"me",
         "content":"很高兴见到你"
       },
       {
-        "type":"me",
+        "from":"me",
         "content":"你有什么想了解的呢？"
       },
       {
-        "type":"me",
+        "from":"me",
         "content":"哈哈哈哈"
       }
     ],
@@ -19,15 +19,42 @@
   "0001": {
     "msg": [
       {
-        "type":"user",
-        "content":"哈哈哈",
-        "res":"0000"
+        "from":"user",
+        "content":"爱好",
+        "res":"0002"
       },
       {
-        "type":"user",
-        "content":"...",
-        "res":"0000"
+        "from":"user",
+        "content":"没什么想了解的",
+        "res":"0003"
       }
     ]
+  },
+  "0002": {
+    "msg": [
+      {
+        "from":"me",
+        "content":"爱好，有很多啊"
+      },
+      {
+        "from":"me",
+        "content":"比如，游戏"
+      }
+    ],
+    "res":"0001"
+  },
+  "0003": {
+    "msg": [
+      {
+        "from":"me",
+        "content":"好吧..."
+      },
+      {
+        "from":"me",
+        "content":"http://www.baidu.com",
+        "type":"url"
+      }
+    ],
+    "res":"0001"
   }
 }
