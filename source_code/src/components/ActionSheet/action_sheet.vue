@@ -1,13 +1,13 @@
 <template>
   <div>
     <div :class="{'action-sheet':true,'show':show}">
-      <div class="head">{{data.title}}</div>
+      <div class="head">的撒大大</div>
       <div class="question"
-           v-for="item in data.questions"
-           @click="handleClick(item.key)">{{item.q}}
+           v-for="(item,index) in data"
+           @click="handleClick(item.res,index)">{{item.content}}
       </div>
     </div>
-    <div :class="{'action-mask':true,'action-mask-show':show}"></div>
+    <div :class="{'action-mask':true,'action-mask-show':show}" @click="handleClick('mask')"></div>
   </div>
 </template>
 
@@ -16,10 +16,10 @@
     data(){
       return {}
     },
-    props: ['data', 'show'],
+    props: ['data', 'show','disabled'],
     methods: {
-      handleClick(key){
-        this.$emit('itemClick')
+      handleClick(key,index){
+        this.$emit('itemClick',key,index)
       }
     }
   }

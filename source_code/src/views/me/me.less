@@ -30,12 +30,11 @@ body {
 
 .me-container {
   background-color: #9BE4D8;
-  width: 98%;
   position: absolute;
   top: 50px;
   bottom: 50px;
-  left: 50%;
-  transform: translate(-50%);
+  left: 2px;
+  right: 2px;
   overflow: hidden;
 }
 
@@ -60,24 +59,34 @@ body {
   cursor: pointer;
 }
 
+.me-footer-disabled{
+  cursor: not-allowed;
+  background-color: #fefefe;
+}
+
 .me-body {
   position: absolute;
   top: 45px;
   bottom: 50px;
   width: 100%;
-
+  padding: 16px 10px 16px 18px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  //&::-webkit-scrollbar {
+  //
+  //}
 }
 
 .msg-box {
   max-width: 100%;
   height: 30px;
   line-height: 30px;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .msg {
   position: relative;
-  margin:0 15px;
+  margin: 0 10px;
   padding: 5px 10px;
   border-radius: 5px;
   &:before {
@@ -93,22 +102,36 @@ body {
   background-color: #fff;
   display: inline-block;
   float: left;
+  animation: hh 0.3s;
   &:before {
     left: -12px;
     border-color: transparent #fff;
     border-width: 0 12px 12px 0;
   }
 }
-.msg-right{
+
+@keyframes hh {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(200%);
+
+  }
+
+}
+
+.msg-right {
   background-color: #00bfff;
   display: inline-block;
-  float:right;
+  float: right;
   color: #fff;
 
   &:before {
     right: -12px;
     border-color: transparent #00bfff;
-    border-width: 0 0 12px 12px ;
+    border-width: 0 0 12px 12px;
   }
 }
 
@@ -133,8 +156,8 @@ body {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
+    left: 0;
+    right: 0;
   }
 
   .me-head {
